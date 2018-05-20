@@ -29,6 +29,12 @@ public class AdminController {
 		return "admin";
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String adminLogout() {
+		
+		return "redirect:/j_spring_security_logout";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String adminLogin(@RequestParam(value="error", required = false) String error, 
 			@RequestParam(value="logout", required = false) String logout, Model model) {
