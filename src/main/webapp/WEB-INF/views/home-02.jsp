@@ -66,8 +66,9 @@
 <!-- header fixed -->
 <div class="wrap_header fixed-header2 trans-0-4">
     <!-- Logo -->
+<%--     <spring:url value="/resources/images/icons/logo.png" var="logoicon"></spring:url> --%>
     <a href="index.jsp" class="logo">
-        <img src="images/icons/logo.png" alt="IMG-LOGO">
+        <img src="<spring:url value="/resources/images/icons/logo.png"></spring:url>" alt="IMG-LOGO">
     </a>
 
     <!-- Menu -->
@@ -116,13 +117,13 @@
     <!-- Header Icon -->
     <div class="header-icons">
         <a href="#" class="header-wrapicon1 dis-block">
-            <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+            <img src="<spring:url value="/resources/images/icons/icon-header-01.png" var="logoicon"></spring:url>" class="header-icon1" alt="ICON">
         </a>
 
         <span class="linedivide1"></span>
 
         <div class="header-wrapicon2">
-            <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+            <img src="<spring:url value="/resources/images/icons/icon-header-02.png" var="logoicon"></spring:url>" class="header-icon1 js-show-header-dropdown" alt="ICON">
             <span class="header-icons-noti">0</span>
 
             <!-- Header cart noti -->
@@ -228,7 +229,7 @@
 
             <!-- Logo2 -->
             <a href="index.jsp" class="logo2">
-                <img src="images/icons/logo.png" alt="IMG-LOGO">
+                <img src="<spring:url value="/resources/images/icons/logo.png"></spring:url>" alt="IMG-LOGO11">
             </a>
 
             <div class="topbar-child2">
@@ -245,13 +246,13 @@
 
                 <!--  -->
                 <a href="#" class="header-wrapicon1 dis-block m-l-30">
-                    <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                    <img src="<spring:url value="/resources/images/icons/icon-header-01.png"></spring:url>" class="header-icon1" alt="ICON">
                 </a>
 
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2 m-r-13">
-                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="<spring:url value="/resources/images/icons/icon-header-02.png" ></spring:url>" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->

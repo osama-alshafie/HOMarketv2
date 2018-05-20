@@ -1,7 +1,10 @@
 package com.jwt.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -13,25 +16,37 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jwt.dao.CartDao;
 import com.jwt.model.Cart;
 import com.jwt.model.CartItem;
 import com.jwt.model.Customer;
 import com.jwt.model.Product;
+import com.jwt.service.CustomerService;
+import com.jwt.service.ProductService;
 
 @Controller
 @RequestMapping(value = "/product")
 public class ProductController {
+	
+	@Autowired
+	private ProductService productService;
+	
+	@Autowired
+	private CustomerService customerService;
+
+	@Autowired
+	private CartDao cartDao;
 	
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String Products(ModelAndView model, Model models) {
 
 		// int counter = 0;
 		// model.addObject(counter);
-		if (productService.getAllProducts() != null) {
-			models.addAttribute("products", productService.getAllProducts());
+		List<Product> allProducts = productService.getAllProducts();
+		if (allProducts != null) {
+			models.addAttribute("products", allProducts);
 		} else {
 			System.out.println("It's Empty");
-
 		}
 
 		return "product";
