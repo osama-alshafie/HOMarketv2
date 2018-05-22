@@ -26,7 +26,8 @@ public class AdminController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String adminPage(Model model) {
-		return "admin";
+		model.addAttribute("title", "Admin Page");
+		return "home-02";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

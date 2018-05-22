@@ -10,8 +10,10 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@  taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
-    
+    <title>${title}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,24 +73,29 @@
         <nav class="menu">
             <ul class="main_menu">
                 <li>
-                    <a href="index.jsp">Home</a>
+                    <a href='<spring:url value="/"/>'>Home</a>
                 </li>
 
                 <li>
-                    <a href="#">Products</a>
+                    <a href='<spring:url value="/product/productInventory"/>'>Products</a>
                 </li>
                 
                 <li>
-                    <a href="<spring:url value="/"></spring:url>">Registeration</a>
+                    <a href="<spring:url value="/register"></spring:url>">Registeration</a>
                 </li>
                 
-                <li>
-                    <a href="<spring:url value="/"></spring:url>">Log in</a>
-                </li>
+                <sec:authorize access="isAnonymous()">
+                    <li>
+	                    <a href="<spring:url value="j_spring_security_check"></spring:url>">Log in</a>
+	                </li>
+                </sec:authorize>
                 
-                <li>
-                    <a href="<spring:url value="/"></spring:url>">Log out</a>
-                </li>
+                <sec:authorize access="isAuthenticated()">
+				    <li>
+	                    <a href="<spring:url value="/j_spring_security_logout"></spring:url>">Log out</a>
+	                </li>
+				</sec:authorize>
+             
             </ul>
         </nav>
     </div>
@@ -107,11 +114,11 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="index.jsp">Home</a>
+                            <a href='<spring:url value="/"/>'>Home</a>
                         </li>
 
                         <li>
-                            <a href="product.jsp">Products</a>
+                            <a href='<spring:url value="/product/productInventory"/>'>Products</a>
                         </li>
                         
                         <%--TODO--%>
@@ -119,17 +126,32 @@
                         <%--TODO--%>
                         <%--TODO--%>
                         <%--TODO--%>
-                        <li>
-                            <a  href="<spring:url value="/register"/>" >Registeration3</a>
-                        </li>
+                        
+                        <sec:authorize access="hasRole('ROLE_ADMIN')">
+                        	<li>
+		    					<a href='<spring:url value="/admin/product/create"/>'>New Product</a>
+	                        </li>
+	                        
+	                        <li>
+		    					<a href='<spring:url value="/admin/customers"/>'>Customer Management</a>
+	                        </li>
+                        </sec:authorize>
                         
                         <li>
-                            <a  href="<spring:url value="/"/>" >Log in</a>
+                            <a  href="<spring:url value="/register"/>" >Registeration</a>
                         </li>
                         
-                        <li>
-                            <a  href="<spring:url value="/"/>" >Log out</a>
-                        </li>
+                        <sec:authorize access="isAnonymous()">
+		                    <li>
+			                    <a href="<spring:url value="/spring_security_login"></spring:url>">Log in</a>
+			                </li>
+		                </sec:authorize>
+		                
+		                <sec:authorize access="isAuthenticated()">
+						    <li>
+			                    <a href="<spring:url value="/j_spring_security_logout"></spring:url>">Log out</a>
+			                </li>
+						</sec:authorize>
                         
                     </ul>
                 </nav>

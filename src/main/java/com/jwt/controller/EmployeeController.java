@@ -84,7 +84,8 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home2() {
+	public String home2(Model model) {
+		model.addAttribute("title", "Home Page");
 		return "home-02";
 	}
 

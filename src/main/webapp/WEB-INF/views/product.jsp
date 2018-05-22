@@ -631,7 +631,9 @@
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">Newsletter</h4>
 
-				<form>
+				<form><li>
+                    <a href="<spring:url value="/"></spring:url>">Log in</a>
+                </li>
 					<div class="effect1 w-size9">
 						<input class="s-text7 bg6 w-full p-b-5" type="text" name="email"
 							placeholder="email@example.com"> <span

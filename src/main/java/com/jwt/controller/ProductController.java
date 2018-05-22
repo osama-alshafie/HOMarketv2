@@ -37,11 +37,9 @@ public class ProductController {
 	@Autowired
 	private CartDao cartDao;
 	
-	@RequestMapping(value = "/product", method = RequestMethod.GET)
+	@RequestMapping(value = "/productInventory", method = RequestMethod.GET)
 	public String Products(ModelAndView model, Model models) {
-
-		// int counter = 0;
-		// model.addObject(counter);
+		
 		List<Product> allProducts = productService.getAllProducts();
 		if (allProducts != null) {
 			models.addAttribute("products", allProducts);
