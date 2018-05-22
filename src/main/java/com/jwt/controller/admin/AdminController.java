@@ -1,8 +1,11 @@
 package com.jwt.controller.admin;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +20,10 @@ import com.jwt.service.ProductService;
 @Controller
 @RequestMapping(value = "/admin")
 public class AdminController {
-	
+
 	@Autowired
 	private ProductService productService;
-	
+
 	@Autowired
 	private CustomerService customerService;
 
@@ -29,33 +32,33 @@ public class AdminController {
 		model.addAttribute("title", "Admin Page");
 		return "home-02";
 	}
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String adminLogout() {
-		
+
 		return "redirect:/j_spring_security_logout";
 	}
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String adminLogin(@RequestParam(value="error", required = false) String error, 
-			@RequestParam(value="logout", required = false) String logout, Model model) {
+	public String adminLogin(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, Model model) {
 		if (error != null) {
 			model.addAttribute("error", "username or password is wrong.");
 		}
-		
+
 		if (logout != null) {
 			model.addAttribute("msg", "you have to logout.");
 		}
 		return "adminLogin";
 	}
-	
+
 	@RequestMapping(value = "/productInventory", method = RequestMethod.GET)
 	public String productInventory(Model model) {
-		//java.util.List<Product>  products = productService.getAllProducts();
+		// java.util.List<Product> products = productService.getAllProducts();
 		model.addAttribute("products", productService.getAllProducts());
 		return "product";
 	}
-	
+
 	@RequestMapping(value = "/product/create", method = RequestMethod.GET)
 	public String createProduct(Model model) {
 		model.addAttribute("title", "New Product");
@@ -63,21 +66,24 @@ public class AdminController {
 		model.addAttribute("product", new Product());
 		return "newProduct";
 	}
-	
+
 	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
-	public String addProduct(@ModelAttribute Product product) {
+	public String addProduct(@Valid @ModelAttribute Product product, BindingResult br) {
+		if (br.hasErrors()) {
+			return "newProduct";
+		}
 		productService.AddProduct(product);
 		return "redirect:/admin";
 	}
-	
+
 	@RequestMapping(value = "/product/delete/{id}", method = RequestMethod.GET)
 	public String deleteProduct(Model model, @PathVariable("id") int id) {
-		//Product product = productService.getProductById(id);
+		// Product product = productService.getProductById(id);
 		productService.deleteProduct(id);
 
 		return "redirect:/admin/productInventory";
 	}
-	
+
 	@RequestMapping(value = "/product/edit/{id}", method = RequestMethod.GET)
 	public String editProduct(Model model, @PathVariable("id") int id) {
 		Product product = productService.getProductById(id);
@@ -87,17 +93,17 @@ public class AdminController {
 
 		return "newProduct";
 	}
-	
+
 	@RequestMapping(value = "/product/edit", method = RequestMethod.POST)
 	public String editProduct(@ModelAttribute Product product) {
 		productService.updateProduct(product);
 		return "redirect:/admin/productInventory";
 	}
-	
+
 	@RequestMapping(value = "/customers", method = RequestMethod.GET)
 	public String customerManagement(Model model) {
 		model.addAttribute("customers", customerService.getAllCustomers());
 		return "customers";
 	}
-	
+
 }

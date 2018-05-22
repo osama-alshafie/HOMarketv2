@@ -3,16 +3,25 @@ package com.jwt.model;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Size(min = 3, max = 8, message = "Name must be between 3 an 8")
 	private String name;
+	@Size(min = 3, max = 8, message = "email must be between 3 an 8")
 	private String email;
 	private String country;
+	@Size(min = 3, max = 8, message = "password must be between 3 an 8")
 	private String password;
 	private boolean enabled;
 

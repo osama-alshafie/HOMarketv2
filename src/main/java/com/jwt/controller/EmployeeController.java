@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.criteria.Order;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import com.jwt.dao.CartDao;
 import com.jwt.model.Cart;
@@ -15,6 +17,7 @@ import com.jwt.service.CartService;
 import com.jwt.service.CustomerService;
 import com.jwt.service.OrderService;
 import com.jwt.service.ProductService;
+
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -22,6 +25,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,11 +75,14 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/registeration", method = RequestMethod.POST)
-	public ModelAndView saveEmployee(@ModelAttribute Customer customer, Model model) {
-		model.addAttribute("customer", new Customer());
+	public String saveEmployee(@Valid @ModelAttribute Customer customer, BindingResult br, Model model) {
+
+		if (br.hasErrors()) {
+			return "registeration";
+		}
 
 		customerService.AddCustomer(customer);
-		return new ModelAndView("redirect:/");
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = "/BASE", method = RequestMethod.GET)
@@ -106,6 +113,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public String Product() {
+		
 
 		return "product";
 	}
