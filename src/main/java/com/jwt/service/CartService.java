@@ -10,7 +10,9 @@ public interface CartService {
 	public void AddCartItem(CartItem cartItem);
 
 	public void EditCart(Cart cart);
+
 	public List<Cart> getAllCarts();
 
+	public void deleteCartItems(List<CartItem> cartItemses);
 
 }

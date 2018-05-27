@@ -1,6 +1,11 @@
 package com.jwt.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 @Entity
@@ -9,11 +14,21 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private int id;
-	
+
+	@NotEmpty(message = "Must be not empty")
 	private String name;
+
+	@NotEmpty(message = "Must be not empty")
 	private String description;
+	@Min(value = 5)
 	private float price;
+
+	@Min(value = 5)
 	private int quantity;
+
+	@Transient
+	private MultipartFile productImage;
+
 	private boolean inStock;
 
 	public int getId() {
@@ -78,5 +93,13 @@ public class Product {
 	public void setCartItemList(List<CartItem> cartItemList) {
 		this.cartItemList = cartItemList;
 	}
-	
+
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
+
 }

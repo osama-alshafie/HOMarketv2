@@ -32,7 +32,7 @@ public class CartItem {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Product product;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Cart cart;
 
 	public Product getProduct() {
@@ -51,6 +51,4 @@ public class CartItem {
 		this.cart = cart;
 	}
 
-	
-	
 }

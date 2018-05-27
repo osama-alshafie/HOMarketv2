@@ -1,5 +1,10 @@
 package com.jwt.controller.admin;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jwt.model.Product;
@@ -23,13 +29,15 @@ public class AdminController {
 
 	@Autowired
 	private ProductService productService;
-
+	private Path path;
 	@Autowired
 	private CustomerService customerService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String adminPage(Model model) {
 		model.addAttribute("title", "Admin Page");
+		model.addAttribute("products", productService.getAllProducts());
+
 		return "home-02";
 	}
 
@@ -54,7 +62,6 @@ public class AdminController {
 
 	@RequestMapping(value = "/productInventory", method = RequestMethod.GET)
 	public String productInventory(Model model) {
-		// java.util.List<Product> products = productService.getAllProducts();
 		model.addAttribute("products", productService.getAllProducts());
 		return "product";
 	}
@@ -68,9 +75,24 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
-	public String addProduct(@Valid @ModelAttribute Product product, BindingResult br) {
+	public String addProduct(@Valid @ModelAttribute Product product, BindingResult br, HttpServletRequest req) {
 		if (br.hasErrors()) {
 			return "newProduct";
+		}
+		MultipartFile productImage = product.getProductImage();
+
+		String rootDir = req.getSession().getServletContext().getRealPath("/");
+
+		path = Paths.get(rootDir + "\\WEB-INF\\resources\\images\\" + product.getId() + ".png");
+
+		if (productImage != null && !productImage.isEmpty()) {
+
+			try {
+				productImage.transferTo(new File(path.toString()));
+			} catch (Exception e) {
+
+				throw new RuntimeException("saving file is failed", e);
+			}
 		}
 		productService.AddProduct(product);
 		return "redirect:/admin";
@@ -95,7 +117,10 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/product/edit", method = RequestMethod.POST)
-	public String editProduct(@ModelAttribute Product product) {
+	public String editProduct(@Valid @ModelAttribute Product product, BindingResult br) {
+		if (br.hasErrors()) {
+			return "newProduct";
+		}
 		productService.updateProduct(product);
 		return "redirect:/admin/productInventory";
 	}

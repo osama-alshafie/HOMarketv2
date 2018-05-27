@@ -30,13 +30,11 @@ public class ProducttDAOImpl implements ProductDao {
 
 	@Override
 	public void deleteProduct(int id) {
-
 		Product product = (Product) sessionFactory.getCurrentSession().load(Product.class, id);
-
 		if (null != product) {
 			this.sessionFactory.getCurrentSession().delete(product);
+			this.sessionFactory.getCurrentSession().flush();
 		}
-
 	}
 
 	@SuppressWarnings("unchecked")

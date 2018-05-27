@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <%@ include file="/WEB-INF/views/Layout/TagLib.jsp"%>
-<title>Product</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,26 +75,23 @@
 
 <body class="animsition">
 
-	<div>
-		<h2>${headerMSG}</h2>
-	</div>
+	<jsp:include page="header.jsp" />
 
 	<div>
 		<c:choose>
 			<c:when test='${title=="New Product"}'>
 				<spring:url value="/admin/product/add" var="url" />
 			</c:when>
-			<c:otherwise>
+			<c:when test='${title=="Edit Product"}'>
 				<spring:url value="/admin/product/edit" var="url" />
-			</c:otherwise>
+			</c:when>
 		</c:choose>
 		<div class="row sign" style="padding-bottom: 30px;">
-			<div class="container col-lg-4 col-lg-offset-4 "
+			<div class="container col-lg-4 col-lg-offset-9 "
 				style="text-align: center;">
 
 				<div class="input-text">
-					<spring:url value="/registeration" var="url" />
-
+					<h2>${headerMSG}</h2>
 					<br /> <br />
 					<form:form commandName="product" cssClass="form-horizontal"
 						action="${url}" method="POST">
@@ -102,52 +99,66 @@
 						<c:if test='${title=="Edit Product"}'>
 							<form:hidden path="id" class="form-control"></form:hidden>
 						</c:if>
-
-
-						<%-- 			<form:label path="name">Product Name</form:label> --%>
-						<%-- 			<form:input type="text" path="name" class="form-control"></form:input> --%>
-						<!-- 			<br /> -->
-
-
-						<div class="form-group col-lg-12 col-lg-offset-0 act">
-							<form:input path="name" cssClass="form-control pass"
+						<div class="form-group col-lg-12 col-lg-offset-5 act">
+							<form:label class="form-group col-lg-4 col-lg-offset-0 "
+								path="name">Name</form:label>
+							<form:input path="name"
+								cssClass="form-group col-lg-6 col-lg-offset-5 act"
 								placeholder="Type your name" />
 						</div>
-						<!-- 			<div class="form-group col-lg-12 col-lg-offset-5"> -->
-						<%-- 				<form:errors path="price" cssStyle="color:#f00;"></form:errors> --%>
-						<!-- 			</div> -->
+
+						<div class="form-group col-lg-12 col-lg-offset-5">
+							<form:errors path="name" cssStyle="color:#f00;"></form:errors>
+						</div>
 
 						<div class="form-group col-lg-12 col-lg-offset-0 act">
-							<form:input path="description" cssClass="form-control pass"
+							<form:label class="form-group col-lg-4 col-lg-offset-0 "
+								path="description">Description</form:label>
+							<form:input path="description"
+								cssClass="form-group col-lg-6 col-lg-offset-5 act"
 								placeholder="Type your description" />
 						</div>
-						<!-- 			<div class="form-group col-lg-12 col-lg-offset-5"> -->
-						<%-- 				<form:errors path="price" cssStyle="color:#f00;"></form:errors> --%>
-						<!-- 			</div> -->
 
+						<div class="form-group col-lg-12 col-lg-offset-5">
+							<form:errors path="description" cssStyle="color:#f00;"></form:errors>
+						</div>
 
 						<div class="form-group col-lg-12 col-lg-offset-0 act">
-							<form:input path="price" cssClass="form-control pass"
+							<form:label class="form-group col-lg-4 col-lg-offset-0 "
+								path="price">Price</form:label>
+							<form:input path="price"
+								cssClass="form-group col-lg-6 col-lg-offset-5 act"
 								placeholder="Type your price" />
 						</div>
-						<!-- 			<div class="form-group col-lg-12 col-lg-offset-5"> -->
-						<%-- 				<form:errors path="price" cssStyle="color:#f00;"></form:errors> --%>
-						<!-- 			</div> -->
 
+						<div class="form-group col-lg-12 col-lg-offset-5">
+							<form:errors path="price" cssStyle="color:#f00;"></form:errors>
+						</div>
 
 
 						<div class="form-group col-lg-12 col-lg-offset-0 act">
-							<form:input path="quantity" cssClass="form-control pass"
+							<form:label class="form-group col-lg-4 col-lg-offset-0 "
+								path="quantity">Quantity</form:label>
+							<form:input path="quantity"
+								cssClass="form-group col-lg-6 col-lg-offset-5 act"
 								placeholder="Type your quantity" />
 						</div>
-						<!-- 			<div class="form-group col-lg-12 col-lg-offset-5"> -->
-						<%-- 				<form:errors path="quantity" cssStyle="color:#f00;"></form:errors> --%>
-						<!-- 			</div> -->
 
+						<div class="form-group col-lg-12 col-lg-offset-5">
+							<form:errors path="quantity" cssStyle="color:#f00;"></form:errors>
+						</div>
 
-						<form:label path="inStock">Is Product inStock</form:label>
-						<form:input type="text" path="inStock" class="form-control"></form:input>
-						<br />
+						<div class="form-group col-lg-12 col-lg-offset-0 act">
+							<form:label class="form-group col-lg-4 col-lg-offset-0 "
+								path="inStock">Stock</form:label>
+							<form:input path="inStock"
+								cssClass="form-group col-lg-6 col-lg-offset-5 act"
+								placeholder="is in Stock" />
+						</div>
+
+						<div class="form-group col-lg-12 col-lg-offset-5">
+							<form:errors path="inStock" cssStyle="color:#f00;"></form:errors>
+						</div>
 
 						<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
 							<button type="submit"
@@ -162,6 +173,8 @@
 
 
 	</div>
+
+	<jsp:include page="footer.jsp" />
 
 
 	<!-- 	=============================================================================================== -->

@@ -28,7 +28,7 @@ public class Orders implements Serializable {
 	/* Mapping */
 	// =============================================================================\\
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(/* cascade = CascadeType.ALL, */ fetch = FetchType.EAGER)
 	private Customer cust;
 
 	@OneToOne(mappedBy = "order", fetch = FetchType.LAZY)

@@ -57,14 +57,6 @@ public class EmployeeController {
 
 	@Autowired
 	private ProductService productService;
-	//
-	// @RequestMapping(value = "/")
-	// public ModelAndView listEmployee(ModelAndView model) throws IOException {
-	// List<Employee> listEmployee = employeeService.getAllEmployees();
-	// model.addObject("listEmployee", listEmployee);
-	// model.setViewName("home");
-	// return model;
-	// }
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
@@ -93,14 +85,13 @@ public class EmployeeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home2(Model model) {
 		model.addAttribute("title", "Home Page");
+		model.addAttribute("products", productService.getAllProducts());
 		return "home-02";
 	}
 
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String Products(ModelAndView model, Model models) {
 
-		// int counter = 0;
-		// model.addObject(counter);
 		if (productService.getAllProducts() != null) {
 			models.addAttribute("products", productService.getAllProducts());
 		} else {
@@ -113,7 +104,6 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
 	public String Product() {
-		
 
 		return "product";
 	}
@@ -132,8 +122,7 @@ public class EmployeeController {
 		}
 		models.addAttribute("cartItemss", cartItems);
 		models.addAttribute("sum", sum);
-
-		// for(int i=0;i<orderss)
+		cartService.deleteCartItems(cartItems);
 
 		return "order";
 	}
@@ -148,6 +137,7 @@ public class EmployeeController {
 
 		List<CartItem> cartItemses = carts.getCartItemList();
 		models.addAttribute("cartItemss", cartItemses);
+
 		return "cart";
 	}
 
@@ -168,16 +158,12 @@ public class EmployeeController {
 		return "redirect:/order";
 	}
 
-	// @RequestMapping(value = "/register", method = RequestMethod.GET)
-	// public String register() {
-	// return "registeration";
-	// }
-
 	@RequestMapping(value = "/product-detail/{id}", method = RequestMethod.GET)
 	public String ProductDetails(Model model, @PathVariable("id") int id) {
-		Product product = productService.getProductById(id);
 
+		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
+		model.addAttribute("maxqtn", product.getQuantity());
 
 		return "product-detail";
 	}
@@ -198,7 +184,6 @@ public class EmployeeController {
 
 		cart.getCartItemList().add(cartItem);
 		cartItem.setCart(cart);
-		// cartDao.AddCartItem(cartItem);
 		cartDao.EditCart(cart);
 
 		return "redirect:/cart";
@@ -210,26 +195,4 @@ public class EmployeeController {
 		return "login";
 	}
 
-	// @RequestMapping(value = "/signin_home", method = RequestMethod.POST)
-	// public String login_in() {
-	//
-	// return "home";
-	// }
-
-	// @RequestMapping(value = "/deleteEmployee", method = RequestMethod.GET)
-	// public ModelAndView deleteEmployee(HttpServletRequest request) {
-	// int employeeId = Integer.parseInt(request.getParameter("id"));
-	// employeeService.deleteEmployee(employeeId);
-	// return new ModelAndView("redirect:/");
-	// }
-	//
-	// @RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
-	// public ModelAndView editContact(HttpServletRequest request) {
-	// int employeeId = Integer.parseInt(request.getParameter("id"));
-	// Employee employee = employeeService.getEmployee(employeeId);
-	// ModelAndView model = new ModelAndView("EmployeeForm");
-	// model.addObject("employee", employee);
-	//
-	// return model;
-	// }
 }

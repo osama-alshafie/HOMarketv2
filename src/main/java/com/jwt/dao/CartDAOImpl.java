@@ -44,13 +44,14 @@ public class CartDAOImpl implements CartDao {
 		return carts;
 	}
 
-//	@Override
-//	public List<CartItem> getAllCartItemsById(Cart cart) {
-//		cart.get
-//		sessionFactory.getCurrentSession().createQuery("from Cart");
-//
-//		
-//		return carts;
-//	}
+	@Override
+	public void deleteCartItems(List<CartItem> cartItemses) {
+		for (CartItem cartItem2 : cartItemses) {
+
+			sessionFactory.getCurrentSession().delete(cartItem2);
+			sessionFactory.getCurrentSession().flush();
+		}
+
+	}
 
 }

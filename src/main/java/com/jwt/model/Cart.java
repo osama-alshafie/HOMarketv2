@@ -22,13 +22,16 @@ public class Cart implements Serializable {
 	/* Mapping */
 	// =============================================================================\\
 
-	@OneToMany(mappedBy = "cart", fetch = FetchType.EAGER , cascade = CascadeType.ALL )
+	@OneToMany(mappedBy = "cart", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<CartItem> cartItemList;
 
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER /* , cascade = CascadeType.ALL */)
 	private Orders order;
 
-	@OneToOne(mappedBy = "cart", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "cart", fetch = FetchType.EAGER /*
+															 * , cascade =
+															 * CascadeType.ALL
+															 */)
 	private Customer customer;
 
 	public List<CartItem> getCartItemList() {

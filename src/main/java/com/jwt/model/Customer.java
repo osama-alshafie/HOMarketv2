@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -18,7 +19,9 @@ public class Customer {
 	private int id;
 	@Size(min = 3, max = 8, message = "Name must be between 3 an 8")
 	private String name;
-	@Size(min = 3, max = 8, message = "email must be between 3 an 8")
+	// @Size(min = 3, max = 8, message = "email must be between 3 an 8")
+	@NotEmpty(message = "shouldnt be empty")
+	@Email(message = "should have form of email ")
 	private String email;
 	private String country;
 	@Size(min = 3, max = 8, message = "password must be between 3 an 8")

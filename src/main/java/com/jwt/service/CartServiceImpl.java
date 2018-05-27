@@ -30,9 +30,16 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public List<Cart> getAllCarts() {
-		// TODO Auto-generated method stub
 
 		return cartDao.getAllCarts();
+
+	}
+
+	@Override
+	public void deleteCartItems(List<CartItem> cartItemses) {
+
+		cartDao.deleteCartItems(cartItemses);
+
 	}
 
 }

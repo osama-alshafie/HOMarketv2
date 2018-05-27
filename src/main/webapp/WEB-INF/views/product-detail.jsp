@@ -74,296 +74,9 @@
 </head>
 <body class="animsition">
 
-	<!-- Header -->
-	<header class="header1">
-		<!-- Header desktop -->
-		<div class="container-menu-header">
-			<div class="topbar">
-				<div class="topbar-social">
-					<a href="#" class="topbar-social-item fa fa-facebook"></a> <a
-						href="#" class="topbar-social-item fa fa-instagram"></a> <a
-						href="#" class="topbar-social-item fa fa-pinterest-p"></a> <a
-						href="#" class="topbar-social-item fa fa-snapchat-ghost"></a> <a
-						href="#" class="topbar-social-item fa fa-youtube-play"></a>
-				</div>
 
-				<span class="topbar-child1"> Free shipping for standard order
-					over $100 </span>
 
-				<div class="topbar-child2">
-					<span class="topbar-email"> fashe@example.com </span>
-
-					<div class="topbar-language rs1-select2">
-						<select class="selection-1" name="time">
-							<option>USD</option>
-							<option>EUR</option>
-						</select>
-					</div>
-				</div>
-			</div>
-
-			<div class="wrap_header">
-				<!-- Logo -->
-				<a href="index.jsp" class="logo"> <img
-					src="images/icons/logo.png" alt="IMG-LOGO">
-				</a>
-
-				<!-- Menu -->
-				<div class="wrap_menu">
-					<nav class="menu">
-						<ul class="main_menu">
-							<li><a href="index.jsp">Home</a>
-								<ul class="sub_menu">
-									<li><a href="index.jsp">Homepage V1</a></li>
-									<li><a href="home-02.jsp">Homepage V2</a></li>
-									<li><a href="home-03.jsp">Homepage V3</a></li>
-								</ul></li>
-
-							<li><a href="product.jsp">Shop</a></li>
-
-							<li class="sale-noti"><a href="product.jsp">Sale</a></li>
-
-							<li><a href="cart.jsp">Features</a></li>
-
-							<li><a href="blog.jsp">Blog</a></li>
-
-							<li><a href="about.jsp">About</a></li>
-
-							<li><a href="contact.jsp">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-
-				<!-- Header Icon -->
-				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block"> <img
-						src="images/icons/icon-header-01.png" class="header-icon1"
-						alt="ICON">
-					</a> <span class="linedivide1"></span>
-
-					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png"
-							class="header-icon1 js-show-header-dropdown" alt="ICON"> <span
-							class="header-icons-noti">0</span>
-
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> White Shirt
-											With Pleat Detail Back </a> <span class="header-cart-item-info">
-											1 x $19.00 </span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> Converse All
-											Star Hi Black Canvas </a> <span class="header-cart-item-info">
-											1 x $39.00 </span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> Nixon Porter
-											Leather Watch In Tan </a> <span class="header-cart-item-info">
-											1 x $17.00 </span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">Total: $75.00</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.jsp"
-										class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart </a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#"
-										class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out </a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Header Mobile -->
-		<div class="wrap_header_mobile">
-			<!-- Logo moblie -->
-			<a href="index.jsp" class="logo-mobile"> <img
-				src="images/icons/logo.png" alt="IMG-LOGO">
-			</a>
-
-			<!-- Button show menu -->
-			<div class="btn-show-menu">
-				<!-- Header Icon mobile -->
-				<div class="header-icons-mobile">
-					<a href="#" class="header-wrapicon1 dis-block"> <img
-						src="images/icons/icon-header-01.png" class="header-icon1"
-						alt="ICON">
-					</a> <span class="linedivide2"></span>
-
-					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png"
-							class="header-icon1 js-show-header-dropdown" alt="ICON"> <span
-							class="header-icons-noti">0</span>
-
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> White Shirt
-											With Pleat Detail Back </a> <span class="header-cart-item-info">
-											1 x $19.00 </span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> Converse All
-											Star Hi Black Canvas </a> <span class="header-cart-item-info">
-											1 x $39.00 </span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name"> Nixon Porter
-											Leather Watch In Tan </a> <span class="header-cart-item-info">
-											1 x $17.00 </span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">Total: $75.00</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.jsp"
-										class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart </a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#"
-										class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out </a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-					<span class="hamburger-box"> <span class="hamburger-inner"></span>
-					</span>
-				</div>
-			</div>
-		</div>
-
-		<!-- Menu Mobile -->
-		<div class="wrap-side-menu">
-			<nav class="side-menu">
-				<ul class="main-menu">
-					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8"><span
-						class="topbar-child1"> Free shipping for standard order
-							over $100 </span></li>
-
-					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<div class="topbar-child2-mobile">
-							<span class="topbar-email"> fashe@example.com </span>
-
-							<div class="topbar-language rs1-select2">
-								<select class="selection-1" name="time">
-									<option>USD</option>
-									<option>EUR</option>
-								</select>
-							</div>
-						</div>
-					</li>
-
-					<li class="item-topbar-mobile p-l-10">
-						<div class="topbar-social-mobile">
-							<a href="#" class="topbar-social-item fa fa-facebook"></a> <a
-								href="#" class="topbar-social-item fa fa-instagram"></a> <a
-								href="#" class="topbar-social-item fa fa-pinterest-p"></a> <a
-								href="#" class="topbar-social-item fa fa-snapchat-ghost"></a> <a
-								href="#" class="topbar-social-item fa fa-youtube-play"></a>
-						</div>
-					</li>
-
-					<li class="item-menu-mobile"><a href="index.jsp">Home</a>
-						<ul class="sub-menu">
-							<li><a href="index.jsp">Homepage V1</a></li>
-							<li><a href="home-02.jsp">Homepage V2</a></li>
-							<li><a href="home-03.jsp">Homepage V3</a></li>
-						</ul> <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
-					</li>
-
-					<li class="item-menu-mobile"><a href="product.jsp">Shop</a></li>
-
-					<li class="item-menu-mobile"><a href="product.jsp">Sale</a></li>
-
-					<li class="item-menu-mobile"><a href="cart.jsp">Features</a></li>
-
-					<li class="item-menu-mobile"><a href="blog.jsp">Blog</a></li>
-
-					<li class="item-menu-mobile"><a href="about.jsp">About</a></li>
-
-					<li class="item-menu-mobile"><a href="contact.jsp">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<!-- breadcrumb -->
-	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="index.jsp" class="s-text16"> Home <i
-			class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-		</a> <a href="product.jsp" class="s-text16"> Women <i
-			class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-		</a> <a href="#" class="s-text16"> T-Shirt <i
-			class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-		</a> <span class="s-text17"> ${product.name} </span>
-	</div>
+	<jsp:include page="header.jsp" />
 
 	<!-- Product Detail -->
 	<div class="container bgwhite p-t-35 p-b-80">
@@ -397,53 +110,24 @@
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
 					${product.name}</h4>
+				<br>
 
-				<span class="m-text17"> $${product.price} </span>
 
-				<p class="s-text8 p-t-10">${product.description}</p>
+				<div class="flex-m flex-w">
+					<div class="s-text15 w-size15 t-center">description</div>
+					${product.description}
+				</div>
+				<br>
+				<div class="flex-m flex-w">
+					<div class="s-text15 w-size15 t-center">price</div>
+					${product.price}
+				</div>
+				<br>
 
 				<!--  -->
 				<div class="p-t-33 p-b-60">
-					<div class="flex-m flex-w p-b-10">
-						<div class="s-text15 w-size15 t-center">${product.quantity}
-						</div>
-
-						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-							<select class="selection-2" name="size">
-								<option>Choose an option</option>
-								<option>Size S</option>
-								<option>Size M</option>
-								<option>Size L</option>
-								<option>Size XL</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="flex-m flex-w">
-						<div class="s-text15 w-size15 t-center">Color</div>
-
-						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-							<select class="selection-2" name="color">
-								<option>Choose an option</option>
-								<option>Gray</option>
-								<option>Red</option>
-								<option>Black</option>
-								<option>Blue</option>
-							</select>
-						</div>
-					</div>
-
 					<div class="flex-r-m flex-w p-t-10">
-						<div class="w-size16 flex-m flex-w">
-							<div
-								class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
-								<!-- Button -->
-
-
-
-
-							</div>
-						</div>
+						<!-- 						<div class="w-size16 flex-m flex-w"></div> -->
 					</div>
 				</div>
 				<spring:url value="/product-detail/${product.id}" var="url" />
@@ -452,21 +136,24 @@
 					<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 						<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 					</button>
-					<input type="number" name="counter" value="1" class="form-control">
+
+					<input type="number" name="counter" value="1" max="${maxqtn}"
+						class="form-control">
 
 					<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 						<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 					</button>
-					<br> <br> <br> <br>
-					<button type="submit">Go to Cart</button>
+					<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
+						<!-- 						Button -->
+						<br>
+						<button
+							class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+							Go To Cart</button>
 
+					</div>
+					<br> <br> <br> <br> <br>
 				</form>
-				<div class="p-b-45">
-					<span class="s-text8 m-r-35">SKU: MUG-01</span> <span
-						class="s-text8">Categories: Mug, Design</span>
-				</div>
 
-				<!--  -->
 				<div
 					class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
 					<h5
@@ -786,98 +473,7 @@
 		</div>
 	</section>
 
-	<!-- Back to top -->
-	<div class="btn-back-to-top bg0-hov" id="myBtn">
-		<span class="symbol-btn-back-to-top"> <i
-			class="fa fa-angle-double-up" aria-hidden="true"></i>
-		</span>
-	</div>
-
-	<!-- Container Selection -->
-	<div id="dropDownSelect1"></div>
-	<div id="dropDownSelect2"></div>
-
-
-	<!--===============================================================================================-->
-
-	<spring:url value="/resources/vendor/jquery/jquery-3.2.1.min.js"
-		var="kmhome1"></spring:url>
-	<script src="${kmhome1}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/animsition/js/animsition.min.js"
-		var="kmhome2"></spring:url>
-	<script src="${kmhome2}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/bootstrap/js/popper.js"
-		var="kmhome3"></spring:url>
-	<script src="${kmhome3}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/bootstrap/js/bootstrap.min.js"
-		var="kmhome4"></spring:url>
-	<script src="${kmhome4}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/select2/select2.min.js"
-		var="kmhome5"></spring:url>
-	<script src="${kmhome5}"></script>
-
-	<script type="text/javascript">
-		$(".selection-1").select2({
-			minimumResultsForSearch : 20,
-			dropdownParent : $('#dropDownSelect1')
-		});
-	</script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/slick/slick.min.js" var="kmhome6"></spring:url>
-	<script src="${kmhome6}"></script>
-
-
-	<spring:url value="/resources/js/slick-custom.js" var="kmhome7"></spring:url>
-	<script src="${kmhome7}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/countdowntime/countdowntime.js"
-		var="kmhome8"></spring:url>
-	<script src="${kmhome8}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/lightbox2/js/lightbox.min.js"
-		var="kmhome9"></spring:url>
-	<script src="${kmhome9}"></script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/sweetalert/sweetalert.min.js"
-		var="kmhome11"></spring:url>
-	<script src="${kmhome11}"></script>
-
-	<script type="text/javascript">
-		$('.block2-btn-addcart').each(
-				function() {
-					var nameProduct = $(this).parent().parent().parent().find(
-							'.block2-name').html();
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to cart !", "success");
-					});
-				});
-
-		$('.block2-btn-addwishlist').each(
-				function() {
-					var nameProduct = $(this).parent().parent().parent().find(
-							'.block2-name').html();
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to wishlist !", "success");
-					});
-				});
-	</script>
-
-	<!--===============================================================================================-->
-	<spring:url value="/resources/vendor/parallax100/parallax100.js"
-		var="kmhome12"></spring:url>
-	<script src="${kmhome12}"></script>
-
-	<script type="text/javascript">
-		$('.parallax100').parallax100();
-	</script>
-	<!--===============================================================================================-->
-	<spring:url value="/resources/js/main.js" var="kmhome13"></spring:url>
-	<script src="${kmhome13}"></script>
-
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>
